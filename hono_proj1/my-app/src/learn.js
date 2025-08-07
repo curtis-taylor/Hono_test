@@ -37,7 +37,15 @@ app.get('/videos', (c) => {
 });
 
 app.get('/video/:id', (c) => {
-
+    const {id} = c.req.param();
+    const video = video.find((video) => video.id === id);
+    if(!video) {
+      return c.json(({message: "Video not found"}, 404));  
+    }
+    return c.json(video);
 });
+
+//update
+app.put('/video/:id')
 
 export default app;
