@@ -1,6 +1,5 @@
 import { Hono } from "hono";
 import { v4 as uuidv4 } from "uuid";
-import { Hono } from 'hono';
 import { stream, streamText, streamSSE } from 'hono/streaming';
 
 let videos = [];
@@ -63,7 +62,7 @@ app.put('/video/:id', async (c) => {
 app.delete('/video/:id', (c) => {
     const {id} = c.req.param();
     videos = videos.filter((video) => video.id != id);
-    return c.json({message: "Video `${id}`deleted"});
+    return c.json({message: `Video ${id} deleted`});
 });
 
 //delete
