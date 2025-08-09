@@ -1,12 +1,22 @@
 import { Hono } from 'hono'
-import { renderer } from './renderer'
+import { poweredBy } from 'hono/powered-by'
+import { logger } from 'hono/logger'
+import dbConnect from './db/connect'
 
 const app = new Hono()
 
-app.use(renderer)
+//middleware
+app.use(poweredBy())
+app.use(logger())
 
-app.get('/', (c) => {
-  return c.render(<h1>Hello!</h1>)
+// app.use(renderer)
+
+dbConnect()
+  .then()
+  .catch((err) => {
+    app.get('/*', (c) => {
+      return c.text(`Failed to connect mongodb ${err.message}`);
+    })
+
 })
-
 export default app

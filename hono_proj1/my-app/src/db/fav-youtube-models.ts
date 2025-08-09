@@ -7,11 +7,34 @@ export interface IFavYoutubeVideoSchema {
     watched: boolean;
     youtuberName: string
 }
-/*
+
 const FavYoutubeVideoScheme = new
 Schema<IFavYoutubeVideoSchema>({
-    title {
+    title: {
         type: String,
-        required
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    thumbnailUrl: {
+        type: String,
+        default: "https://images.silvergold.media/cdn-cgi/image/quality=85,format=auto/https://silvergold.media/media/catalog/category/category-tiles-gold-new-arrivals-gold.png",
+        required: false
+    },
+    watched: {
+        type: Boolean,
+        default: false,
+        required: true
+    },
+    youtuberName: {
+        type: String,
+        required: true
     }
-}) */
+
+});
+
+const FavYoutubeVideosModel = model('fav-youtube-videos', FavYoutubeVideoScheme);
+
+export default FavYoutubeVideosModel;
