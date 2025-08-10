@@ -10,12 +10,13 @@
   },
   "dependencies": {
     "hono": "^4.8.12",
+    "mongoose": "^8.17.1",
     "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.2.3",
     "vite": "^6.3.5",
     "vite-ssr-components": "^0.3.0",
-    "wrangler": "^4.17.0"
+    "wrangler": "^4.28.1"
   }
 }

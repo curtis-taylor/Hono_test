@@ -6,7 +6,9 @@
     "strict": true,
     "skipLibCheck": true,
     "lib": [
-      "ESNext"
+      "ESNext",
+      "dom",
+      "es6"
     ],
     "types": ["vite/client"],
     "jsx": "react-jsx",
